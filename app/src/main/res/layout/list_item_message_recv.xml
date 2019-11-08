@@ -4,20 +4,29 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/chatbot_ima"
+        android:src="@drawable/chatbot"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        ></ImageView>
+
     <com.github.library.bubbleview.BubbleTextView
         android:id="@+id/text_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_marginEnd="391dp"
+        android:layout_toRightOf="@id/chatbot_ima"
+        android:background="@color/colorAccent"
         android:padding="10dp"
-        android:textColor="#FFF"
+        android:textColor="@android:color/white"
         app:angle="8dp"
         app:arrowCenter="true"
         app:arrowHeight="10dp"
-        app:arrowLocation="right"
+        app:arrowLocation="left"
         app:arrowPosition="14dp"
         app:arrowWidth="8dp"
-        android:background="@android:color/holo_blue_bright"></com.github.library.bubbleview.BubbleTextView>
+        ></com.github.library.bubbleview.BubbleTextView>
 
 </RelativeLayout>
