@@ -5,15 +5,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+//Importacion de las librerias
 import com.example.poo_chatbot.Models.ChatModel;
 import com.example.poo_chatbot.R;
 import com.github.library.bubbleview.BubbleTextView;
-
 import java.util.List;
 
 
 public class CustomAdapter extends BaseAdapter {
-
 
     private List<ChatModel> list_chat_models;
     private Context context;

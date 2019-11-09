@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">POO_Chatbot</string>
+    <string name="app_name">ChatBot</string>
     <string name="action_settings">Settings</string>
+    <string name="Chatbot_API">6yGtvFWkw6Fi + CLcNOFXkEhbuVm1NHRDAzyI1lJW</string>
+    
+
 </resources>
