@@ -2,20 +2,19 @@ package com.example.poo_chatbot
 
 import android.os.AsyncTask
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.provider.Settings.Global.getString
 import android.view.View
 import android.widget.EditText
 import android.widget.ListView
 import com.example.poo_chatbot.Adapter.CustomAdapter
-import com.example.poo_chatbot.Helper.HttpDataHandler
+import com.example.poo_chatbot.Helper.HttpDataHanler
 import com.example.poo_chatbot.Models.ChatModel
+import com.example.poo_chatbot.Models.ChatBotModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 abstract class MainActivity : AppCompatActivity() {
 
@@ -58,15 +57,17 @@ abstract class MainActivity : AppCompatActivity() {
          override fun doInBackground(vararg params: List<ChatModel>?): String {
              val url = String.format("http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=1.0&text=%s", getString(R.string.Chatbot_API), text)
              models = params[0] as MutableList<ChatModel>
-             val httpDataHandler = HttpDataHandler()
+             val httpDataHandler = HttpDataHanler()
              stream = httpDataHandler.GetHTTPData(url)
              return stream.toString()
          }
 
          override fun onPostExecute(s: String) {
-             val gson: Gson
+             /*        val gson = Gson()
+        val apiResponse = gson.fromJson(response, ApiResponse::class.java)*/
+             val gson = Gson()
 
-             val response: gson.fromJson<ChatModel>(s, ChatBotModel::class.java!)
+             val response = gson.fromJson(s, ChatBotModel::class.java)
 
              val chatModel =
                  ChatModel(response.getResponse(), false) //Captura la respuesta de la API

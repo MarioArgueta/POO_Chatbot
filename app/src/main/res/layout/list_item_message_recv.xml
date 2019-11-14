@@ -26,7 +26,6 @@
         app:arrowHeight="10dp"
         app:arrowLocation="left"
         app:arrowPosition="14dp"
-        app:arrowWidth="8dp"
-        ></com.github.library.bubbleview.BubbleTextView>
+        app:arrowWidth="8dp"></com.github.library.bubbleview.BubbleTextView>
 
 </RelativeLayout>

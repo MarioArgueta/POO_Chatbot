@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="391dp"
+        android:background="#ffff"
         android:padding="10dp"
         android:textColor="#FFF"
         app:angle="8dp"
@@ -17,7 +18,6 @@
         app:arrowHeight="10dp"
         app:arrowLocation="right"
         app:arrowPosition="14dp"
-        app:arrowWidth="8dp"
-        android:background="@android:color/holo_blue_bright"></com.github.library.bubbleview.BubbleTextView>
+        app:arrowWidth="8dp"></com.github.library.bubbleview.BubbleTextView>
 
 </RelativeLayout>
