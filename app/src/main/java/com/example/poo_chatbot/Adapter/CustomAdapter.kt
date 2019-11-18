@@ -43,4 +43,5 @@ class CustomAdapter(private val list_chat_models: List<ChatModel>, private val c
         }
         return view
     }
+
 }

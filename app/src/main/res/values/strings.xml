@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">ChatBot</string>
     <string name="action_settings">Settings</string>
-    <string name="Chatbot_API">6yGtvFWkw6Fi + CLcNOFXkEhbuVm1NHRDAzyI1lJW</string>
-    
-
+    <string name="chatbot_API">BFNPLFovSJqHvRN4W0JrD0mMyHj+p59WBwam5s1S</string>
 </resources>

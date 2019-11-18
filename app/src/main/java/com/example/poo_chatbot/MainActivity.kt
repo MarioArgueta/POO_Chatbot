@@ -1,9 +1,9 @@
 package com.example.poo_chatbot
 
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.provider.Settings.Global.getString
 import android.view.View
 import android.widget.EditText
 import android.widget.ListView
@@ -41,7 +41,6 @@ abstract class MainActivity : AppCompatActivity() {
 
                 editText.setText("") //Remueve el mensaje del usuario
             }
-
             /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()*/
         }
@@ -55,27 +54,30 @@ abstract class MainActivity : AppCompatActivity() {
          internal var text = editText.text.toString()
 
          override fun doInBackground(vararg params: List<ChatModel>?): String {
-             val url = String.format("http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=1.0&text=%s", getString(R.string.Chatbot_API), text)
+             val url = String.format("http://sandbox.api.simsimi.com/request.p?key=BFNPLFovSJqHvRN4W0JrD0mMyHj+p59WBwam5s1S&lc=en&ft=1.0&text=%s", text)
              models = params[0] as MutableList<ChatModel>
              val httpDataHandler = HttpDataHanler()
              stream = httpDataHandler.GetHTTPData(url)
              return stream.toString()
          }
 
+         private var instance: MainActivity? = null
+
+         fun getApplicationContext() : Context {
+             return instance!!.applicationContext
+         }
+
          override fun onPostExecute(s: String) {
-             /*        val gson = Gson()
-        val apiResponse = gson.fromJson(response, ApiResponse::class.java)*/
              val gson = Gson()
-
              val response = gson.fromJson(s, ChatBotModel::class.java)
-
-             val chatModel =
-                 ChatModel(response.getResponse(), false) //Captura la respuesta de la API
+             val chatModel = ChatModel(response.getResponse(),true) //Captura la respuesta de la API
              models.add(chatModel)
-             val adapter = customAdapter(models,applicationContext)
+             val adapter = CustomAdapter(models,getApplicationContext())
              listView.setAdapter(adapter)
          }
+
      }
+
     /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -92,3 +94,5 @@ abstract class MainActivity : AppCompatActivity() {
         }
     }*/
 }
+
+

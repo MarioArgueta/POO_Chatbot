@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="391dp"
         android:layout_toRightOf="@id/chatbot_ima"
-        android:background="@color/colorAccent"
+        android:background="#FFFFFF"
         android:padding="10dp"
         android:textColor="@android:color/white"
         app:angle="8dp"

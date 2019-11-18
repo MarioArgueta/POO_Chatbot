@@ -19,8 +19,9 @@ class HttpDataHanler {
 
                 val r = BufferedReader(InputStreamReader(`in`))
                 val sb = StringBuilder()
-                var line: String
-                while ((line = r.readLine()) != null)
+                lateinit var line: String
+
+                while ((line == r.readLine()) != null)
                     sb.append(line)
                 stream = sb.toString()
                 urlConnection.disconnect()
